@@ -5,11 +5,11 @@
  */
 package net.sunnefa.lcarsclock.views;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 import net.sunnefa.lcarsclock.models.ClockModel;
 
 /**
@@ -27,7 +27,7 @@ public class DigitalView extends JPanel {
         
         //GridLayout grid = new GridLayout(2,1);
         
-        this.setLayout(new FlowLayout());
+        this.setLayout(new BorderLayout());
         
         JLabel time_label = new JLabel();
         time_label.setText("15:47:10");
@@ -46,9 +46,9 @@ public class DigitalView extends JPanel {
         star_label.setForeground(new Color(255, 153, 0));
         
         
-        this.add(time_label);
-        this.add(date_label);
-        this.add(star_label, JPanel.BOTTOM_ALIGNMENT);
+        this.add(time_label, BorderLayout.WEST);
+        this.add(date_label, BorderLayout.EAST);
+        this.add(star_label, BorderLayout.SOUTH);
         
     }
     

@@ -66,10 +66,7 @@ class LClock {
         ClockModel clock_model = new ClockModel();
         DigitalView digital_view = new DigitalView(clock_model);
         
-        float dg_x = app_label.getAlignmentX() + 70;
-        console(app_label.getAlignmentX());
-        
-        digital_view.setBounds((int)dg_x, 110, 680, 200);
+        digital_view.setBounds(70, 110, 680, 200);
         
         this.app_window.add(digital_view);
         
