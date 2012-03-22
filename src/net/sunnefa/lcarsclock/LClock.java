@@ -1,4 +1,4 @@
-/*
+/**
  * This is LClock.java
  * Created on 22.3.2012
  * @author Sunnefa Lind <sunnefa_lind@hotmail.com>
@@ -21,10 +21,27 @@ import javax.swing.JLabel;
  */
 class LClock {
     
+    /**
+     * The variable holding the main application window
+     * @var app_window
+     */
     JFrame app_window;
+    
+    /**
+     * The variable holding the main app label which uses the label image as a background
+     * @var app_label
+     */
     JLabel app_label;
+    
+    /**
+     * The variable holding the main background image
+     * @var label_image
+     */
     BufferedImage label_image;
 
+    /**
+     * Main constructor which created the frame, loads the background and adds it to the label.
+     */
     public LClock() {
         try {
             this.label_image = ImageIO.read(new File("/Users/shannensekaya/NetBeansProjects/LCARS Clock/assets/lcars_background.png"));
