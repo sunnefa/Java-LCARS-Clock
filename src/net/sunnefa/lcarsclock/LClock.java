@@ -7,7 +7,6 @@ package net.sunnefa.lcarsclock;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +14,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import net.sunnefa.lcarsclock.models.ClockModel;
 import net.sunnefa.lcarsclock.views.DigitalView;
 
@@ -57,24 +55,35 @@ class LClock {
         this.app_window.setLayout(new BorderLayout());
         this.app_window.setSize(820, 755);
         this.app_window.setBackground(Color.black);
-        
-        ClockModel clock_model = new ClockModel();
-        DigitalView digital_view = new DigitalView(clock_model);
-        digital_view.setBounds(70, 110, 680, 200);
+        this.app_window.setResizable(false);
         
         //JPanel new_panel = new JPanel();
         //new_panel.setBounds(70, 110, 680, 200);
         //new_panel.setBackground(Color.yellow);
         
+        this.app_label = new JLabel(new ImageIcon(label_image));
+        
+        ClockModel clock_model = new ClockModel();
+        DigitalView digital_view = new DigitalView(clock_model);
+        
+        float dg_x = app_label.getAlignmentX() + 70;
+        console(app_label.getAlignmentX());
+        
+        digital_view.setBounds((int)dg_x, 110, 680, 200);
+        
         this.app_window.add(digital_view);
         
-        this.app_label = new JLabel(new ImageIcon(label_image));
+        
         this.app_window.add(app_label);
         
         
         
         this.app_window.setVisible(true);
         
+    }
+
+    private void console(float msg) {
+        System.out.println(msg);
     }
     
 }
