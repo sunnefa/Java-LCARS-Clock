@@ -5,6 +5,7 @@
  */
 package net.sunnefa.lcarsclock.models;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import net.sunnefa.lcarsclock.listeners.MyEventListener;
 
@@ -50,8 +51,9 @@ public class ClockModel {
         return this.clock_date.getDate();
     }
     
-    public int get_year() {
-        return this.clock_date.getYear();
+    public String get_year() {
+        SimpleDateFormat simple = new SimpleDateFormat("yyyy");
+        return simple.format(this.clock_date);
     }
     
     public int get_month() {

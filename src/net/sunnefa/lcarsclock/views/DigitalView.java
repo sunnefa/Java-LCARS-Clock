@@ -61,8 +61,6 @@ public class DigitalView extends AbstractClock {
         this.time_label.setBounds(100, 100, 300, 300);
         this.set_font_color(time_label);
         
-        System.out.println(this.clock_model.get_year() + "");
-        
         
         this.date_label = new JLabel();
         this.date_label.setText(this.clock_model.get_date() + "." + this.clock_model.get_month() + "." + this.clock_model.get_year());
