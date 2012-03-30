@@ -24,6 +24,7 @@ public class RotatingImage extends JPanel {
     
     public RotatingImage(Image image) {
         this.set_image(image);
+        setOpaque(false);
     }
     
     public void set_image(Image image) {
@@ -74,6 +75,8 @@ public class RotatingImage extends JPanel {
         newXform.rotate(Math.toRadians(this.current_angle), xRot, yRot);
         
         g2d.setTransform(newXform);
+        
+        //g2d.rotate(Math.toRadians(this.current_angle), xRot, yRot);
         
         int x = (getWidth() - this.image.getWidth(this)) / 2;
         int y = (getHeight() - this.image.getHeight(this)) / 2;
