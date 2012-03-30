@@ -5,8 +5,7 @@
  */
 package net.sunnefa.lcarsclock.models;
 
-import java.util.Date;
-import java.util.Timer;
+import java.util.*;
 
 
 
@@ -16,10 +15,22 @@ import java.util.Timer;
  */
 public class ClockModel {
     
+    private List listenters = new ArrayList();
+    
     Date clock_date;
     
     public ClockModel() {
         this.clock_date = new Date(2371, 5, 25, 12, 15);
+        Timer timer = new Timer();
+        TimerTask time_task = new TimerTask() {
+            @Override
+            public void run() {
+                clock_date.setSeconds(clock_date.getSeconds() + 1);
+                
+            }
+        };
+        
+        timer.schedule(time_task, 1000, 1000);
     }
     
     public int get_seconds() {
@@ -35,22 +46,15 @@ public class ClockModel {
     }
     
     public int get_date() {
-        console(this.clock_date.getDate());
         return this.clock_date.getDate();
     }
     
     public int get_year() {
-        console(this.clock_date.getYear());
         return this.clock_date.getYear();
     }
     
     public int get_month() {
-        console(this.clock_date.getMonth());
         return this.clock_date.getMonth();
-    }
-    
-    private void console(int num) {
-        System.out.println(num);
     }
 
     
