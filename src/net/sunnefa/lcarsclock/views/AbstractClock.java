@@ -18,6 +18,7 @@ public class AbstractClock extends JPanel {
     
     public AbstractClock(ClockModel clock_model) {
         this.clock_model = clock_model;
+        //this.clock_model.addEventListener(new MyEventListener());
     }
     
 }
