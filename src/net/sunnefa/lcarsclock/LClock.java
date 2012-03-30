@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import net.sunnefa.lcarsclock.models.ClockModel;
+import net.sunnefa.lcarsclock.views.AnalogView;
 import net.sunnefa.lcarsclock.views.DigitalView;
 
 /**
@@ -68,6 +69,12 @@ class LClock {
         
         digital_view.setBounds(70, 110, 680, 200);
         
+        AnalogView analog = new AnalogView(clock_model);
+
+        analog.setBounds(70, 400, 200, 200);
+        analog.setOpaque(false);
+        
+        this.app_window.add(analog);
         this.app_window.add(digital_view);
         
         

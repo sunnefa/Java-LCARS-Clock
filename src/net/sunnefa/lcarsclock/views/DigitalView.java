@@ -30,6 +30,7 @@ public class DigitalView extends AbstractClock {
         super(clock_model);
         
         this.clock_model.addEventListener(new MyEventListener() {
+            @Override
             public void handle_change(EventObject e) {
                 
                 String hours = DigitalView.this.clock_model.get_hours() + "";
