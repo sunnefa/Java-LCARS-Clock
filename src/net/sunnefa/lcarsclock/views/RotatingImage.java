@@ -76,7 +76,9 @@ public class RotatingImage extends JPanel {
         
         g2d.setTransform(newXform);
         
-        //g2d.rotate(Math.toRadians(this.current_angle), xRot, yRot);
+        //g2d.rotate(Math.toRadians(this.current_angle), 0, 0);
+        
+        g2d.rotate(Math.toRadians(this.current_angle), xRot, yRot);
         
         int x = (getWidth() - this.image.getWidth(this)) / 2;
         int y = (getHeight() - this.image.getHeight(this)) / 2;

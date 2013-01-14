@@ -18,7 +18,6 @@ import net.sunnefa.lcarsclock.models.ClockModel;
  * @author Sunnefa Lind <sunnefa_lind@hotmail.com>
  */
 public class AnalogView extends AbstractClock {
-    private ClockModel clock_model;
     
     private RotatingImage hour_hand;
     
@@ -34,7 +33,11 @@ public class AnalogView extends AbstractClock {
         this.clock_model.addEventListener(new MyEventListener() {
             @Override
             public void handle_change(EventObject e) {
+                AnalogView.this.second_hand.rotate(6 * AnalogView.this.clock_model.get_seconds());
                 
+                //AnalogView.this.minute_hand.rotate(6 * AnalogView.this.clock_model.get_minutes());
+                
+                //AnalogView.this.hour_hand.rotate(30 * AnalogView.this.clock_model.get_hours() + AnalogView.this.clock_model.get_minutes() / 2);
             }
         });
         
@@ -52,7 +55,7 @@ public class AnalogView extends AbstractClock {
         this.minute_hand.setBounds(90, 35, minute_hand_image.getWidth(this), minute_hand_image.getHeight(this));
         
         this.second_hand = new RotatingImage(second_hand_image);
-        this.second_hand.setBounds(70, 110, second_hand_image.getWidth(this), second_hand_image.getHeight(this));
+        this.second_hand.setBounds(98, 30, second_hand_image.getWidth(this), second_hand_image.getHeight(this));
 
         this.add(this.minute_hand);
         this.add(this.second_hand);
